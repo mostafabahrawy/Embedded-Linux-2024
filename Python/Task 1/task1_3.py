@@ -1,3 +1,5 @@
 import os
 
-print(os.environ['HOME'])
+for key, value in os.environ.items():
+    print(key + ': ' + value)
+
