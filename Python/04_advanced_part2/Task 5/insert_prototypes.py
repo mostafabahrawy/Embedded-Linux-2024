@@ -1,7 +1,7 @@
 import openpyxl
 import re
 
-header_file = 'headers.h'
+header_file = 'prototypes.h'
 excel_file = 'excel.xlsx'
 
 with open(header_file, 'r') as f:
@@ -12,7 +12,6 @@ prototypes_pattern = r'^[a-zA-Z_][a-zA-Z0-9_]*\s+[a-zA-Z_][a-zA-Z0-9_]*\s*\([a-z
 #re.MULTILINE allows the ^ to match at the beginning of each line, not just the beginning of the string.
 prototypes = re.findall(prototypes_pattern, copy, re.MULTILINE)
 
-print(prototypes)
 workbook = openpyxl.Workbook()
 sheet = workbook.active 
 
